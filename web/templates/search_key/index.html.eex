@@ -1,0 +1,28 @@
+<h2>Listing search keys</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for search_key <- @search_keys do %>
+    <tr>
+      <td><%= search_key.name %></td>
+      <td><%= search_key.category %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: search_key_path(@conn, :show, search_key), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: search_key_path(@conn, :edit, search_key), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: search_key_path(@conn, :delete, search_key), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New search key", to: search_key_path(@conn, :new) %>

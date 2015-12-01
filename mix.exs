@@ -37,7 +37,8 @@ defmodule TomeStats.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
-     {:httpotion, "~> 2.1.0"}]
+     {:httpotion, "~> 2.1.0"},
+     {:poison, "~> 1.5"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

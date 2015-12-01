@@ -1,0 +1,6 @@
+<h2>New search key value</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: search_key_value_path(@conn, :create) %>
+
+<%= link "Back", to: search_key_value_path(@conn, :index) %>

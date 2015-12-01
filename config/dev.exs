@@ -35,7 +35,7 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :tome_stats, TomeStats.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "nwise",
+  username: "nathanwise",
   password: "",
   database: "tome_stats_dev",
   hostname: "localhost",

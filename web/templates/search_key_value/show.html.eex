@@ -1,0 +1,18 @@
+<h2>Show search key value</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @search_key_value.name %>
+  </li>
+
+  <li>
+    <strong>Search key:</strong>
+    <%= @search_key_value.search_key_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: search_key_value_path(@conn, :edit, @search_key_value) %>
+<%= link "Back", to: search_key_value_path(@conn, :index) %>
