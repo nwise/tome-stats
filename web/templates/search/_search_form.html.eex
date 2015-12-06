@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <%= form_for @conn, search_path(@conn, :create), [as: :search], fn f -> %>
+  <%= for category <- @categories do %>
+    <div class='form-group col-md-4'>
+    <%= label f, String.to_atom(category.name), String.capitalize(category.name), class: "control-label pull-left" %>
+    <%= select f, String.to_atom(category.name), Enum.map(category.search_key_values, fn(k) -> {k.name, k.name} end), class: "form-control", prompt: "Choose a category" %>
+    </div>
+  <% end %>
+  <%= submit "Search" %>
+<% end %>
+</div>

@@ -15,6 +15,7 @@ defmodule TomeStats.Router do
 
   scope "/", TomeStats do
     pipe_through :browser # Use the default browser stack
+    resources "search", SearchController
     resources "/search-keys", SearchKeyController
     resources "/search-key-values", SearchKeyValueController
 

@@ -4,7 +4,7 @@ defmodule TomeStats.SearchKey do
   schema "search_keys" do
     field :name, :string
     field :category, :string
-
+    has_many :search_key_values, TomeStats.SearchKeyValue
     timestamps
   end
 

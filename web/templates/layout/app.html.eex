@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Phoenix!</title>
+    <title>Tome Stats</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -15,9 +15,10 @@
     <div class="container" role="main">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+          <li><a href='<%= search_key_url(TomeStats.Endpoint, :index) %>'>Search Keys</a><li>
+          <li><a href='<%= search_key_value_url(TomeStats.Endpoint, :index) %>'>Search Key Values</a><li>
         </ul>
-        <span class="logo"></span>
+        <h1><a href='<%= page_path(TomeStats.Endpoint, :index) %>'>Tome Stats</a></h1>
       </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
