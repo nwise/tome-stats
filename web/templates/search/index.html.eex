@@ -1,5 +1,5 @@
 <h2>Search Results</h2>
-<%= @search_url %>
+<%= @results.search_url %>
 <br>
 <%= render TomeStats.SearchView, "_search_form.html", conn: @conn, categories: @categories %>
 
@@ -9,11 +9,5 @@
     <th>User</th>
     <th>Character</th>
   </tr>
-  <%= for result <- @results do %>
-    <tr>
-    <td><%= result["uuid"] %></td>
-    <td><a href='http://te4.org/user/<%= result["id_profile"] %>/characters' target=_blank><%= result["uname"] %></a></td>
-    <td><a href='http://te4.org/characters/<%= result["uid"] %>/tome/<%= result["uuid"] %>' target=_blank><%= result["title"] %></a></td>
-  </tr>
-<% end %>
+
 </table>
