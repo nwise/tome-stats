@@ -1,6 +1,6 @@
-defmodule TomeStats.Results do
+defmodule TomeStats.Search do
 
-  defstruct results: [], search_url: 'none'
+  defstruct results: [], search_url: ''
 
   def search(search_params) do
     search_params
@@ -15,9 +15,9 @@ defmodule TomeStats.Results do
   end
 
   def get_search_results(search_url) do
-    results = HTTPotion.get(search_url) \
+    results = HTTPotion.get(search_url).body
               |> Poison.decode!
-    %TomeStats.Results{results: results, search_url: search_url}
+    %TomeStats.Search{results: results, search_url: search_url}
   end
 
   def convert_params_to_query_string(search_params) do
