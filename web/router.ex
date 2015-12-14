@@ -15,15 +15,17 @@ defmodule TomeStats.Router do
 
   scope "/", TomeStats do
     pipe_through :browser # Use the default browser stack
-    resources "search", SearchController
+    resources "search", SearchController, only: [:index, :create]
     resources "/search-keys", SearchKeyController
     resources "/search-key-values", SearchKeyValueController
 
-    get "/", PageController, :index
+    get "/", SearchController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", TomeStats do
-  #   pipe_through :api
-  # end
+  scope "/api", TomeStats.Api do
+    pipe_through :api
+    resources "/search-keys", SearchKeyController
+    resources "/search-key-values", SearchKeyValueController
+  end
 end

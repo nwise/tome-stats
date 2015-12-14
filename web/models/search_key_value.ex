@@ -1,6 +1,8 @@
 defmodule TomeStats.SearchKeyValue do
   use TomeStats.Web, :model
 
+  @derive {Poison.Encoder, only: [:name, :inserted_at, :updated_at]}
+
   schema "search_key_values" do
     field :name, :string
     belongs_to :search_key, TomeStats.SearchKey
