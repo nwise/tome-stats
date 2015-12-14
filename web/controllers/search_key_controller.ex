@@ -1,6 +1,5 @@
 defmodule TomeStats.SearchKeyController do
   use TomeStats.Web, :controller
-
   alias TomeStats.SearchKey
 
   plug :scrub_params, "search_key" when action in [:create, :update]

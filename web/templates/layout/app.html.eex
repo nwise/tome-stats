@@ -18,7 +18,7 @@
           <li><a href='<%= search_key_url(TomeStats.Endpoint, :index) %>'>Search Keys</a><li>
           <li><a href='<%= search_key_value_url(TomeStats.Endpoint, :index) %>'>Search Key Values</a><li>
         </ul>
-        <h1><a href='<%= page_path(TomeStats.Endpoint, :index) %>'>Tome Stats</a></h1>
+        <h1><a href='<%= search_path(TomeStats.Endpoint, :index) %>'>Tome Stats</a></h1>
       </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
