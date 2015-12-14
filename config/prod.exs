@@ -18,7 +18,7 @@ config :tome_stats, TomeStats.Endpoint,
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
-config :tome_stats, TomeStats.Repo
+config :tome_stats, TomeStats.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20
